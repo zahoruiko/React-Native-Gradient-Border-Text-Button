@@ -10,6 +10,8 @@ export type TGradientBorderProps = {
   backgroundOpacity?: number;
   useAngle?: boolean;
   angle?: number;
+  outerBorderRadius?: number;
+  innerBorderRadius?: number;
 };
 
 const GradientBorder: React.FC<TGradientBorderProps> = ({
@@ -20,21 +22,23 @@ const GradientBorder: React.FC<TGradientBorderProps> = ({
   backgroundOpacity = 1,
   useAngle = true,
   angle = 45,
+  outerBorderRadius = 20,
+  innerBorderRadius = 18,
 }) => {
   const styles = StyleSheet.create({
     linearGradient: {
       height: height,
       width: width,
-      borderRadius: 20 // <-- Outer Border Radius
+      borderRadius: outerBorderRadius
     },
     innerContainer: {
-      borderRadius: 18, // <-- Inner Border Radius
-      margin: 2,
       flex: 1,
-      backgroundColor: '#fff',
       justifyContent: 'center',
       alignItems: 'center',
-      opacity: backgroundOpacity
+      margin: 2,
+      backgroundColor: '#fff',
+      opacity: backgroundOpacity,
+      borderRadius: innerBorderRadius,
     }
   });
   return (

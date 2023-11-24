@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dimensions, SafeAreaView, StyleSheet, View } from 'react-native';
-import BorderGradient from './components/GradientBorder';
+import GradientBorder from './components/GradientBorder';
 import GradientText from './components/GradientText';
 import GradientButton from './components/GradientButton';
 
@@ -12,7 +12,7 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView style={styles.container}>
-      <BorderGradient width={WIDTH} height={HEIGHT}>
+      <GradientBorder width={WIDTH} height={HEIGHT}>
         <>
           <View style={styles.textContainer}>
             <GradientText gradientColors={['magenta', 'darkorange']} style={styles.text}>
@@ -28,7 +28,7 @@ function App(): JSX.Element {
             style={styles.buttonText}
           />
         </>
-      </BorderGradient>
+      </GradientBorder>
     </SafeAreaView>
   );
 }
